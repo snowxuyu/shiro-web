@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.snowxuyu.shiro.dao.RoleDao">
+    <resultMap id="getMap" type="org.snowxuyu.shiro.entity.Role">
+    </resultMap>
+	
+	<resultMap id="userRoleMap" type="org.snowxuyu.shiro.entity.UserRole">
+	</resultMap>
+
+    <select id="listRole" resultMap="getMap">
+        select * from t_role
+    </select>
+    
+    <select id="loadUserRole" parameterType="string" resultMap="userRoleMap">
+    	select * from t_user_role where user_id = #{0} and roleId = #{1}
+    </select>
+
+    <select id="listRoleResource" parameterType="string" resultType="org.snowxuyu.shiro.entity.Resources">
+        SELECT
+        r.*
+        FROM
+        t_role r,
+        t_role_resources rr,
+        t_resources r
+        WHERE r.`id` = rr.`role_id`
+        AND rr.`resources_id` = r.`id`
+        AND r.`id` = #{roleId}
+    </select>
+
+    <select id="loadRoleResources" parameterType="string" resultType="org.snowxuyu.shiro.entity.RoleResources">
+        SELECT * FROM t_role_resources WHERE role_id = #{roleId}
+            AND resources_id = #{resourcesId}
+    </select>
+
+</mapper>
