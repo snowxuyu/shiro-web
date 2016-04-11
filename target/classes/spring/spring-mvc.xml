@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns="http://www.springframework.org/schema/beans"
@@ -26,7 +27,7 @@
 					</list>
 				</property>
 				<!-- 定义一个时间属性 WriteDateUseDateFormat是FastJsonHttpMessageConverter
-				类自带的属性features中的枚举值 -->
+                类自带的属性features中的枚举值 -->
 				<property name="features">
 					<list>
 						<value>WriteMapNullValue</value>
@@ -39,7 +40,7 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 	<bean id="conversionService"
-		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		  class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
 		<property name="converters">
 			<set>
 				<bean class="org.framework.basic.convert.String2DateConverter" />
@@ -85,4 +86,7 @@
 			<value>4096</value>
 		</property>
 	</bean>
+
+	<import resource="classpath:/spring/applicationContext-framework.xml"/>
+	<import resource="classpath:/spring/applicationContext.xml"/>
 </beans>

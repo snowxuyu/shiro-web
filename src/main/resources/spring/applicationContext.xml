@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
 <beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns="http://www.springframework.org/schema/beans"
        xmlns:aop="http://www.springframework.org/schema/aop"
@@ -76,7 +77,5 @@
         <property name="basePackage" value="org.snowxuyu.shiro.dao" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
-
-    <import resource="classpath:/spring/applicationContext-framework.xml"/>
 
 </beans>
