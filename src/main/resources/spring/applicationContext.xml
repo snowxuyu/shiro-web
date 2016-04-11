@@ -21,7 +21,7 @@
     <aop:aspectj-autoproxy />
     <context:annotation-config  />
     <!-- 启动包扫描功能，以便注册带有@Controller、@Service、@repository、@Component等注解的类成为spring的bean -->
-    <context:component-scan base-package="org.snowxuyu" >
+    <context:component-scan base-package="org.snowxuyu.shiro" >
         <!-- 在spring配置文件中去除@Controller注解 -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>

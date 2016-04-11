@@ -23,7 +23,7 @@ public class RoleController {
     @Resource
     private RoleService roleService;
 
-    @RequestMapping(value = "/listRole", method = RequestMethod.POST)
+    @RequestMapping(value = "/listRole", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity listRole() {
         logger.debug("=======>>rolecontroller");

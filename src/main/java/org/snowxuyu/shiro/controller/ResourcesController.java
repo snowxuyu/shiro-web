@@ -21,7 +21,7 @@ public class ResourcesController {
     @Resource
     private ResourcesService resourcesService;
 
-    @RequestMapping(value = "/listResources", method = RequestMethod.POST)
+    @RequestMapping(value = "/listResources", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity listResources() {
         logger.debug("=======>>resourcesController listresources");

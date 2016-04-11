@@ -25,7 +25,7 @@ public class UserController {
     private UserService userService;
 
 
-    @RequestMapping(value = "/listUser", method = RequestMethod.POST)
+    @RequestMapping(value = "/listUser", method = RequestMethod.GET)
     @ResponseBody
     public ResponseEntity listUser() {
         logger.debug("========>>userController listUser");

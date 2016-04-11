@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Created by snow on 2015/12/4.
  */
 @Controller
-@RequestMapping("/")
 public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
