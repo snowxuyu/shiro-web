@@ -14,8 +14,6 @@
        http://www.springframework.org/schema/tx
        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-
-
     <aop:config />
     <!-- enable @AspectJ support with XML based configuration -->
     <aop:aspectj-autoproxy />
@@ -25,7 +23,6 @@
         <!-- 在spring配置文件中去除@Controller注解 -->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
-
 
     <context:property-placeholder location="classpath:jdbc.properties" />
 
@@ -71,7 +68,6 @@
             </list>
         </property>
         <!--<property name="typeAliasesSuperType" value="org.framework.basic.entity.BaseEntity" />-->
-
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="org.snowxuyu.shiro.dao" />

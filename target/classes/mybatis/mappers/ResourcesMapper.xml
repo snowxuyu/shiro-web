@@ -6,7 +6,6 @@
     </resultMap>
 
     <select id="listResources" resultMap="getMap">
-        SELECT * from t_resources
-
+        SELECT * FROM t_resources
     </select>
 </mapper>

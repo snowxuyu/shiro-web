@@ -9,11 +9,11 @@
 	</resultMap>
 
     <select id="listRole" resultMap="getMap">
-        select * from t_role
+        SELECT * FROM t_role
     </select>
     
     <select id="loadUserRole" parameterType="string" resultMap="userRoleMap">
-    	select * from t_user_role where user_id = #{0} and roleId = #{1}
+    	SELECT * FROM t_user_role WHERE user_id = #{0} AND roleId = #{1}
     </select>
 
     <select id="listRoleResource" parameterType="string" resultType="org.snowxuyu.shiro.entity.Resources">
