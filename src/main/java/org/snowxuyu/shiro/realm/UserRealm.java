@@ -10,11 +10,12 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.framework.basic.system.ResponseEntity;
+import org.framework.common.util.ContextUtils;
 import org.snowxuyu.shiro.entity.Resources;
 import org.snowxuyu.shiro.entity.User;
 import org.snowxuyu.shiro.service.UserService;
-import org.snowxuyu.shiro.util.InitServlet;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -23,13 +24,21 @@ import java.util.List;
  * Created by snow on 2015/12/4.
  */
 public class UserRealm extends AuthorizingRealm {
+
+    @Resource
+    private UserService userService;
+
+    /**
+     * 授权
+     * @param principal
+     * @return
+     */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principal) {
         System.out.println("==========进入授权操作========");
         User user = (User)principal.getPrimaryPrincipal();
         String uid = user.getId();
         System.out.println(user.getId()+","+user.getNickName());
-        UserService userService = (UserService)InitServlet.getBean("userService");
         ResponseEntity resp1 = userService.listRoleSnByUser(uid);
         ResponseEntity resp2 = userService.listAllResource(uid);
         List<String> roles = (List<String>)resp1.getData();
@@ -44,9 +53,14 @@ public class UserRealm extends AuthorizingRealm {
         return info;
     }
 
+    /**
+     * 认证
+     * @param token
+     * @return
+     * @throws AuthenticationException
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        UserService userService = (UserService) InitServlet.getBean("userService");
         String username = token.getPrincipal().toString();
         String password = new String((char[]) token.getCredentials());
         ResponseEntity resp = userService.login(username, password);

@@ -30,6 +30,7 @@ public class LoginController {
         try {
             subject.login(token);
         } catch (AuthenticationException e) {
+            System.out.println(e.getMessage());
             emsg = e.getMessage();
         }
         if(ShiroKit.isEmpty(emsg)) {

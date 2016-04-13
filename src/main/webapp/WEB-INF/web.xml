@@ -3,7 +3,8 @@
     xmlns="http://java.sun.com/xml/ns/javaee"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  
-    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">  
+    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
     <!-- springmvc的配置 -->
     <servlet>
         <servlet-name>springmvc</servlet-name>
@@ -19,12 +20,6 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     
-    <servlet>
-		<servlet-name>initServlet</servlet-name>
-		<servlet-class>org.snowxuyu.shiro.util.InitServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-
     <!--设置字符编码-->
     <filter>
         <filter-name>CharacterEncodingFilter</filter-name>
