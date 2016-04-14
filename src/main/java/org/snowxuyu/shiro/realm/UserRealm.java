@@ -15,7 +15,6 @@ import org.snowxuyu.shiro.entity.Resources;
 import org.snowxuyu.shiro.entity.User;
 import org.snowxuyu.shiro.service.UserService;
 
-import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -25,9 +24,6 @@ import java.util.List;
  */
 public class UserRealm extends AuthorizingRealm {
 
-    @Resource
-    private UserService userService;
-
     /**
      * 授权
      * @param principal
@@ -35,6 +31,7 @@ public class UserRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principal) {
+        UserService userService = (UserService) ContextUtils.getBean(UserService.class);
         System.out.println("==========进入授权操作========");
         User user = (User)principal.getPrimaryPrincipal();
         String uid = user.getId();
@@ -61,6 +58,7 @@ public class UserRealm extends AuthorizingRealm {
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+        UserService userService = (UserService) ContextUtils.getBean(UserService.class);
         String username = token.getPrincipal().toString();
         String password = new String((char[]) token.getCredentials());
         ResponseEntity resp = userService.login(username, password);
