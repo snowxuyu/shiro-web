@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by snow on 2015/11/21.
  */
-@Service("userService")
+@Service
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
     private final Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
@@ -157,12 +157,11 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 			if (!user.getPassWord().equals(ShiroKit.md5(password, username))) {
 				throw new IncorrectCredentialsException("用户名或密码出错");
 			}
-			if (user.getStatus().equals("0")) {
+			if (user.getStatus() != null && "0".equals(user.getStatus())) {
 				throw new LockedAccountException("用户已经被锁定");
 			}
-			resp.setStatus(Constants.System.SUCCESSS);
 			resp.setData(user);
-			resp.setMessage("登陆成功");
+			resp.setStatus(Constants.System.SUCCESSS);
 		} catch (BaseException e) {
 			resp.setStatus(Constants.System.ERROR);
 			resp.setMessage("登陆出错，查询数据异常");
