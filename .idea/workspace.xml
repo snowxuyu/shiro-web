@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b6b9f56-aecb-45a5-83e5-620b8aea114b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/snowxuyu/shiro/realm/UserRealm.java" afterPath="$PROJECT_DIR$/src/main/java/org/snowxuyu/shiro/realm/UserRealm.java" />
-    </list>
+    <list default="true" id="4b6b9f56-aecb-45a5-83e5-620b8aea114b" name="Default" comment="" />
     <ignored path="shiro-web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -804,12 +802,12 @@
       <workItem from="1460551711090" duration="6557000" />
       <workItem from="1460563944106" duration="788000" />
       <workItem from="1461075887054" duration="83000" />
-      <workItem from="1461076154859" duration="2361000" />
+      <workItem from="1461076154859" duration="2370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15872000" />
+    <option name="totallyTimeSpent" value="15881000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
