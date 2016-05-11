@@ -19,8 +19,9 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
+
 /**
- * Created by snow on 2015/12/4.
+ * Create by snow on 2015/12/4
  */
 public class UserRealm extends AuthorizingRealm {
 

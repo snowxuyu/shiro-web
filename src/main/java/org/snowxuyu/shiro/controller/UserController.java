@@ -18,7 +18,7 @@ import java.util.ArrayList;
  * Created by snow on 2015/11/21.
  */
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/admin/user")
 public class UserController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
     @Resource

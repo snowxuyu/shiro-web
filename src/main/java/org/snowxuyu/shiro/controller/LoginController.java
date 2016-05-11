@@ -34,7 +34,7 @@ public class LoginController {
             emsg = e.getMessage();
         }
         if(ShiroKit.isEmpty(emsg)) {
-            return "redirect:/user/listUser";
+            return "redirect:/admin/user/listUser";
         } else {
             model.addAttribute("emsg", emsg);
             return "/login";

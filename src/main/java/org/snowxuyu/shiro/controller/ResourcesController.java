@@ -15,7 +15,7 @@ import javax.annotation.Resource;
  * Created by snow on 2015/11/21.
  */
 @Controller
-@RequestMapping("/resources")
+@RequestMapping("/admin/resources")
 public class ResourcesController {
     private final Logger logger = LoggerFactory.getLogger(getClass());
     @Resource
