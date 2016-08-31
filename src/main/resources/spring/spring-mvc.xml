@@ -14,7 +14,7 @@
 	<!-- 启动注解驱动的Spring MVC功能，注册请求url和注解POJO类方法的映射 -->
 	<!--使用fastJson返回json格式数据-->
 	<mvc:annotation-driven conversion-service="conversionService">
-		<mvc:message-converters>
+		<mvc:message-converters register-defaults="true">
 			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
 				<constructor-arg name="defaultCharset" value="UTF-8" />
 			</bean>
